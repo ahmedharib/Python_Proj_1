@@ -135,7 +135,7 @@ def hangman(secret_word):
             for i in guess:
                 if i not in secret_word:
                   if i in correct_letters:
-                      print("you have already guessed this letter, try again")
+                      print(f"you have already guessed this letter, try again: {get_word_progress(secret_word, letters_guessed)}")
                   else:
                     print(f"Oops! That letter is not in my word: {get_word_progress(secret_word, letters_guessed)}")
                     if guess in 'aeiou':
@@ -160,5 +160,5 @@ def hangman(secret_word):
 
 if __name__ == "__main__":
 
-    secret_word = "hello" #choose_word(wordlist)
+    secret_word = choose_word(wordlist)
     hangman(secret_word)
